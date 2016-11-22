@@ -38,12 +38,13 @@
 	array_push($contacts, $newContact);
 
 	// Save info back to file, overwriting it
-	$file = fopen("json/contacts.json", "w");
+	$path = $_SERVER['DOCUMENT_ROOT'] . '/json/contacts.json';
+	$file = fopen($path, "a+");
 	fwrite($file, json_encode($contacts));
 	fclose($file);
 
 	// Redirect back to index.html
 ?>
 <script>
-window.location = "../index.html";
+//window.location = "../index.html";
 </script>

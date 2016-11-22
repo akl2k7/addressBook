@@ -16,7 +16,7 @@ class Contact{
 	private $notes;
 	private $relationship;
 
-	function __construct($name, $phone, $email, $address, $city, $state, $zipCode, $country, $webAddress, $notes, $relationship){
+	function __construct($name, $phone, $email, $address, $city, $state, $zipCode, $country, $notes, $relationship){
 		$this->name = $name;
 		$this->phoneNumber = $phone;
 		$this->email = $email;
@@ -25,7 +25,6 @@ class Contact{
 		$this->state = $state;
 		$this->zipCode = $zipCode;
 		$this->country = $country;
-		$this->webAddress = $webAddress;
 		$this->notes = $notes;
 		$this->relationship = $relationship;
 	}
