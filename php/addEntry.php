@@ -6,7 +6,17 @@
 	// Check if file exists
 	if(file_exists("json/contacts.json")){
 		// If file exists, Load info from file
+		$file = fopen("json/contacts.json", "r");
+		$rawData = fread($file, filesize($file));
 
+		// Convert raw data to an array
+		$data = json_decode($rawData);
+
+		for($i = 0; $i < count($data); $i++){
+			$contact = new Contact($data[i]->name, $data[$i]->phoneNumber, $data[$i]->email, $data[$i]->address, $data[$i]->city, $data[$i]->state, $data[$i]->zipCode, $data[$i]->country, $data[$i]->notes, $data[$i]->relationship);
+		}
+
+		fclose($file);
 	}
 
 	// Take data from form
@@ -31,4 +41,9 @@
 	$file = fopen("json/contacts.json", "w");
 	fwrite($file, json_encode($contacts));
 	fclose($file);
+
+	// Redirect back to index.html
 ?>
+<script>
+window.location = "../index.html";
+</script>
