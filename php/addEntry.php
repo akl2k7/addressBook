@@ -14,6 +14,7 @@
 
 		for($i = 0; $i < count($data); $i++){
 			$contact = new Contact($data[$i]->name, $data[$i]->phoneNumber, $data[$i]->email, $data[$i]->address, $data[$i]->city, $data[$i]->state, $data[$i]->zipCode, $data[$i]->country, $data[$i]->notes, $data[$i]->relationship);
+			array_push($contacts, $contact);
 		}
 
 		fclose($file);
@@ -40,7 +41,7 @@
 	// Save info back to file, overwriting it
 	$path =  '../json/contacts.json';
 	$file = fopen($path, "w");
-	fwrite($file, json_encode($contacts));
+	fwrite($file, json_encode($contacts, JSON_PRETTY_PRINT));
 	fclose($file);
 
 	// Redirect back to index.html

@@ -1,1 +1,26 @@
-[{"name":"Batman","phoneNumber":"(970)712-8153","email":"escissorhands@gmail.com","address":"2518 Jefferson Avenue","city":"Gotham","state":"Connecticut","zipCode":"81505","country":"United States","notes":"He's Batman...","relationship":"Not me!"}]
+[
+    {
+        "name": "Batman",
+        "phoneNumber": "(970)712-8153",
+        "email": "escissorhands@gmail.com",
+        "address": "2518 Jefferson Avenue",
+        "city": "Gotham",
+        "state": "Connecticut",
+        "zipCode": "81505",
+        "country": "United States",
+        "notes": "He's Batman...",
+        "relationship": "Not me!"
+    },
+    {
+        "name": "Andrew Laino",
+        "phoneNumber": "(970)712-8153",
+        "email": "aklaino89@gmail.com",
+        "address": "2518 Madison Avenue",
+        "city": "Grand Junction",
+        "state": "Colorado",
+        "zipCode": "81505",
+        "country": "United States",
+        "notes": "Just a guy stuck living with his parents.",
+        "relationship": "Me!"
+    }
+]
