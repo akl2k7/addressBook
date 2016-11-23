@@ -4,16 +4,16 @@
 	$contacts = [];
 
 	// Check if file exists
-	if(file_exists("json/contacts.json")){
+	if(file_exists("../json/contacts.json")){
 		// If file exists, Load info from file
-		$file = fopen("json/contacts.json", "r");
-		$rawData = fread($file, filesize($file));
+		$file = fopen("../json/contacts.json", "r");
+		$rawData = fread($file, filesize("../json/contacts.json"));
 
 		// Convert raw data to an array
 		$data = json_decode($rawData);
 
 		for($i = 0; $i < count($data); $i++){
-			$contact = new Contact($data[i]->name, $data[$i]->phoneNumber, $data[$i]->email, $data[$i]->address, $data[$i]->city, $data[$i]->state, $data[$i]->zipCode, $data[$i]->country, $data[$i]->notes, $data[$i]->relationship);
+			$contact = new Contact($data[$i]->name, $data[$i]->phoneNumber, $data[$i]->email, $data[$i]->address, $data[$i]->city, $data[$i]->state, $data[$i]->zipCode, $data[$i]->country, $data[$i]->notes, $data[$i]->relationship);
 		}
 
 		fclose($file);
@@ -38,8 +38,8 @@
 	array_push($contacts, $newContact);
 
 	// Save info back to file, overwriting it
-	$path = $_SERVER['DOCUMENT_ROOT'] . '/json/contacts.json';
-	$file = fopen($path, "a+");
+	$path =  '../json/contacts.json';
+	$file = fopen($path, "w");
 	fwrite($file, json_encode($contacts));
 	fclose($file);
 
@@ -48,3 +48,4 @@
 <script>
 //window.location = "../index.html";
 </script>
+
