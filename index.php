@@ -15,7 +15,8 @@
 		<h1>Address Book</h1>
 		<div id="viewContacts">
 			<?php 
-				echo file_get_contents("viewContacts.php");
+			include("viewContacts.php");
+			viewContacts();
 			?>	
 		</div>
 		<div id="addContact">

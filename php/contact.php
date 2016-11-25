@@ -44,5 +44,11 @@ class Contact implements JsonSerializable{
 		];
 		return $output;
 	}
+
+	public function output(){
+		$output = '<li class="list-group-item contact">';
+		$output .= $this->name . '</li>';
+		return $output;
+	}
 }
 ?>
